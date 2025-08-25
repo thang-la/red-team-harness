@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "red-team-harness"
+version = "0.1.0"
+description = "A source code is designed to conduct safety red-teaming tests on large language models (LLMs)."
+authors = [{ name = "Thang La" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "torch>=2.8.0",
+  "transformers>=4.55.4",
+  "accelerate>=1.10.0",
+  "safetensors>=0.6.2",
+]
+
+[project.scripts]
+rethar = "red_team_harness.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
